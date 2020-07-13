@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './be.png';
-import './App.css';
+import NavbarComp from '../src/Component/Fungsional/NavbarComp'
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-      </header>
+    <div>
+      <NavbarComp/>
     </div>
   );
 }

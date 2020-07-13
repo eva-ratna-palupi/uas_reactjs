@@ -1,0 +1,23 @@
+.text-info {
+    text-align: center;
+}
+
+.App {
+    text-align: center;
+  }
+  
+.App-logo {
+    height: 20vmin;
+    pointer-events: all;
+    
+}
+  
+.App-header {
+    background-color: #ffffff;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
