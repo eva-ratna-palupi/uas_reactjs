@@ -18,12 +18,10 @@ const NavbarComp = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const {value, setValue} = useContext(CartContext)
-
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">React Js</NavbarBrand>
+        <NavbarBrand href="/">BECERIN</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -31,30 +29,17 @@ const NavbarComp = (props) => {
               <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/produk">Product</NavLink>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/about">About</NavLink>
+              <NavLink href="/produk">Produk</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/barang">Barang</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/class">Class Comp</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/hook">Hooks</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/useeffect">Hooks useEffect</NavLink>
-            </NavItem>
           
           </Nav>
           <NavbarText>
-            <Button color="danger">
-              <i className="fa fa-shopping-cart"></i>
-              <span className="badge badge-light">{value}</span>
-            </Button>
           </NavbarText>
         </Collapse>
         </Navbar>

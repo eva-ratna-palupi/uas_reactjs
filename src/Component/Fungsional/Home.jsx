@@ -28,24 +28,6 @@ const Home = () => {
             harga="32.500.000"
         />
     </div>
-    //<Blog
-    //tanggal="02 Juni 20120"
-    //judul="Teknologi Blockchain"
-    //summary="Generate Lorem Ipsum placeholder text for use in your graphic."
-    //>
-
-    //<Blog
-    //tanggal="03 Juni 20120"
-    //judul="Teknologi Internet of Things"
-    //summary="Generate Lorem Ipsum placeholder text for use in your graphic."
-    // />
-
-    //<Blog
-    //tanggal="04 Juni 20120"
-    //judul="Desain Patern Laravel"
-    //summary="Generate Lorem Ipsum placeholder text for use in your graphic."
-    //>
-
 }
 
 export default Home;

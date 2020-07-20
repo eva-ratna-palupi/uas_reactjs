@@ -3,30 +3,31 @@ import axios from 'axios'
 import qs from 'querystring'
 import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import {Link} from 'react-router-dom'
+
 const api = 'http://localhost:3001'
 
 class ListComp extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            mahasiswa: [],
+            tb_produk: [],
             response: '',
             display: 'none'
 
         }
     }
     componentDidMount() {
-        axios.get(api + '/tampil').then(res => {
+        axios.get(api + '/tampilproduk').then(res => {
             this.setState({
-                mahasiswa: res.data.values
+                tb_produk: res.data.values
             })
         })
     }
 
-    Deletemahasiswa = (id_mahasiswa) => {
-        const { mahasiswa } = this.state
+    DeleteProduk = (id_produk) => {
+        const { tb_produk } = this.state
         const data = qs.stringify({
-            id_mahasiswa: id_mahasiswa
+            id_produk: id_produk
 
         })
 
@@ -39,10 +40,10 @@ class ListComp extends PureComponent {
             if (json.data.status === 200) {
                 this.setState({
                     response: json.data.values,
-                    mahasiswa: mahasiswa.filter(mahasiswa => mahasiswa.id_mahasiswa !== id_mahasiswa),
+                    tb_produk: tb_produk.filter(tb_produk => tb_produk.id_produk !== id_produk),
                     display: 'block'
                 })
-                this.props.history.push('/mahasiswa')
+                this.props.history.push('/produk')
             } else {
                 this.setState({
                     response: json.data.values,
@@ -56,43 +57,43 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2>Data Mahasiswa</h2>
-                <NavLink href="/mahasiswa/tambah"><Button color="primary">Tambah Data</Button></NavLink>
+                <h2>Data Produk</h2>
+                <NavLink href="/produk/tambah"><Button color="primary">Tambah Data</Button></NavLink>
                 <Alert color="primary" style={{display: this.state.display}}>{this.state.response}</Alert>
                 <hr />
                 <Table className="table=bordered">
                     <thead>
                         <tr>
-                            <th>NIM</th>
+                            <th>ID</th>
                             <th>Nama</th>
-                            <th>Jurusan</th>
-                            <th>Aksi</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
                         </tr>
 
                     </thead>
                     <tbody>
-                        {this.state.mahasiswa.map(mahasiswa =>
-                            <tr key={mahasiswa.id_mahasiswa}>
-                                <td>{mahasiswa.nim}</td>
-                                <td>{mahasiswa.nama}</td>
-                                <td>{mahasiswa.jurusan}</td>
+                        {this.state.tb_produk.map(tb_produk =>
+                            <tr key={tb_produk.id_produk}>
+                                <td>{tb_produk.nama}</td>
+                                <td>{tb_produk.jumlah}</td>
+                                <td>{tb_produk.harga}</td>
                                 <td>
                                     <Link to=
                                         {
                                             {
-                                                pathname: '/mahasiswa/edit',
+                                                pathname: '/produk/edit',
                                                 state: {
-                                                    id_mahasiswa: mahasiswa.id_mahasiswa,
-                                                    nim: mahasiswa.nim,
-                                                    nama: mahasiswa.nama,
-                                                    jurusan: mahasiswa.jurusan
+                                                    id_produk: tb_produk.id_produk,
+                                                    nama: tb_produk.nama,
+                                                    jumlah: tb_produk.jumlah,
+                                                    harga: tb_produk.harga
                                                 }
                                             }
                                         }>
                                         <Button> Edit </Button>
                                         </Link>
                                         <span> </span>
-                                        <Button onClick={() => this.Deletemahasiswa(mahasiswa.id_mahasiswa)} color="danger"> Hapus </Button>
+                                        <Button onClick={() => this.DeleteProduk(tb_produk.id_produk)} color="danger"> Hapus </Button>
                                 </td>
                             </tr>
                         )}
