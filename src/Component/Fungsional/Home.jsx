@@ -1,32 +1,44 @@
 import React from 'react'
 import Produk from '../Class/Produk';
-//import Blog from './Blog'
+import anggur from '../Gambar/anggur.jpg'
+import apel from '../Gambar/apple.jpg'
+import avocado from '../Gambar/avocado.jpg'
+import banana from '../Gambar/banana.jpg'
+import {Container} from 'reactstrap'
+
 
 const Home = () => {
     return <div>
+        <Container className="themed-container" fluid={true}>
+        <br/>
         <Produk
             stok="10"
-            nama="Macbook Pro 2018"
-            harga="25.500.000"
+            nama="Anggur California"
+            harga="35.500"
+            img={anggur}
         />
-
+        
         <Produk
             stok="15"
-            nama="Macbook Pro 2019"
-            harga="28.500.000"
+            nama="Apel Hijau Malang"
+            harga="25.000"
+            img={apel}
         />
 
         <Produk
             stok="20"
-            nama="Macbook Pro 2020"
-            harga="30.500.000"
+            nama="Alpukat"
+            harga="30.500"
+            img={avocado}
         />
 
         <Produk
             stok="30"
-            nama="Macbook Pro 2021"
-            harga="32.500.000"
+            nama="Pisang Ambon"
+            harga="20.000"
+            img={banana}
         />
+        </Container>
     </div>
 }
 

@@ -1,21 +1,22 @@
 .box-stock{
-    width: 300px;
+    width: 310px;
     display: inline-block;
     height: auto;
-    border: 1px solid black;
-    padding: 10px;
+    border: 2px solid grey;
+    padding: 9px;
     margin: 10px;
-    background-color: beige;
+    background-color: gold;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .box-stock img{
-    width: 300px;
+    width: 290px;
     height: 200px;
 }
 
 .btn-click {
-    background-color: gray;
-    color: black;
+    background-color: green;
+    color: white;
     padding: 10px;
     border: 1px;
     width: 100px;
