@@ -1,6 +1,6 @@
 import React from 'react'
 import './CSS/Produk.css'
-import { Button, Card, Col, CardTitle, Row, CardBody, CardImg } from 'reactstrap'
+import { Button, Card, CardDeck, CardTitle,  CardBody, CardImg, Col, Row } from 'reactstrap'
 
 
 class Produk extends React.Component {
@@ -31,18 +31,51 @@ class Produk extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col sm="3">
-                        <Card body>
-                            <CardTitle>{this.props.nama}</CardTitle>
-                        <img width="100%" src={this.props.img} alt="" />
+                <Row xs="3">
+                <Col>
+                    <Card>
+                        
+                        <CardImg top width="100%" src={this.props.img}/>
+                        <CardBody>
+                        <CardTitle>{this.props.nama}</CardTitle>
                         <p><b>Rp. {this.props.harga} /kg</b></p>
-                            <p>Stok : {this.state.stock}</p>
-                            <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
-                            </Card>
+                        <p>Stok : {this.state.stock}</p>
+                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                        </CardBody>
+                        
+                    </Card><br/><br/>
+            
+            </Col>
+            <Col>
+                    <Card>
+                        
+                        <CardImg top width="100%" src={this.props.img}/>
+                        <CardBody>
+                        <CardTitle>{this.props.nama}</CardTitle>
+                        <p><b>Rp. {this.props.harga} /kg</b></p>
+                        <p>Stok : {this.state.stock}</p>
+                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                        </CardBody>
+                        
+                    </Card><br/><br/>
+            
+            </Col>
+            <Col>
+                    <Card>
+                        
+                        <CardImg top width="100%" src={this.props.img}/>
+                        <CardBody>
+                        <CardTitle>{this.props.nama}</CardTitle>
+                        <p><b>Rp. {this.props.harga} /kg</b></p>
+                        <p>Stok : {this.state.stock}</p>
+                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                        </CardBody>
+                        
+                    </Card><br/><br/>
+            
             </Col>
             </Row>
-            </div >
+            </div>
 
         )
     }
