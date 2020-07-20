@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavbarComp from '../src/Component/Fungsional/NavbarComp'
 import Home from '../src/Component/Fungsional/Home'
 import ListComp from './Component/Class/ListComp';
