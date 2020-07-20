@@ -1,92 +1,44 @@
-import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from 'reactstrap';
+import React from 'react'
+import './CSS/Produk.css'
 
+class Produk extends React.Component {
+    constructor(props) {
+        super(props)
 
-const items = [
-  {
-    src: '',
-    altText: 'Apel Hijau',
-    caption: 'Slide 1'
-  },
-  {
-    src: '',
-    altText: 'Pisang',
-    caption: 'Slide 2'
-  },
-  {
-    src: '',
-    altText: 'Buah Berry',
-    caption: 'Slide 3'
-  },
-  {
-    src: '',
-    altText: 'Buah Strawberry',
-    caption: 'Slide 4'
-  },
-  {
-    src: '',
-    altText: 'Buah Anggur',
-    caption: 'Slide 5'
-  },
-  {
-    src: '',
-    altText: 'Buah Mangga',
-    caption: 'Slide 6'
-  }
-];
+        this.state = {
+            stock: this.props.stok,
+            sub: "Beli",
+            status: "Tersedia",
+            disabled: false
 
-const Produk = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
+        }
+    }
+    ButtonBeli = () => {
+        this.setState({
+            stock: this.state.stock -1
+        })
 
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  }
+        if(this.state.stock ===1){
+            this.setState({
+                status: "Habis",
+                disabled: true
+            })
+        }
+    }
 
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  }
+    render(){
+        return(
+            <div className="box-stock">
+                <h2>{this.props.nama}</h2>
+                <img src="https://cdn.vox-cdn.com/thumbor/T6t8XBXGKWiSC6sXqA8BxdqYIj0=/0x0:2040x1360/1570x883/filters:focal(860x723:1186x1049):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66790314/dbohn_200506_4012_0031.0.jpg" alt=""/>
+                <p><b>Rp. {this.props.harga}</b></p>
+                <p>Stok : {this.state.stock}</p>
+                <button className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</button>
+                <p>{this.state.status}</p>
 
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  }
-
-  const slides = items.map((item) => {
-    return (
-      <CarouselItem
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-        key={item.src}
-      >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-      </CarouselItem>
-    );
-  });
-
-  return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-    >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-      {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-    </Carousel>
-  );
+            </div>
+        )
+    }
 }
 
 export default Produk;

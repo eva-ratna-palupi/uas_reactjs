@@ -1,40 +1,65 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarText
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText,
+  Button
 } from 'reactstrap';
-import BootstrapComp from '../Class/BootstrapComp'
+import { CartContext } from '../../CartContext';
 
 const NavbarComp = (props) => {
 
-    return (
-        <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Becer.in</NavbarBrand>
-                <Nav className="mr-auto" navbar>
-                    <NavItem>
-                        <NavLink href="/">Home</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/produk">Produk</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/keranjang">Keranjang</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/tentang">Tentang</NavLink>
-                    </NavItem>
-                </Nav>
-                <NavbarText>Cari Disini</NavbarText>
-            </Navbar>
-            <BootstrapComp/>
-            
-        </div>
-    );
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  const {value, setValue} = useContext(CartContext)
+
+  return (
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">React Js</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/produk">Product</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/barang">Barang</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/class">Class Comp</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/hook">Hooks</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/useeffect">Hooks useEffect</NavLink>
+            </NavItem>
+          
+          </Nav>
+          <NavbarText>
+            <Button color="danger">
+              <i className="fa fa-shopping-cart"></i>
+              <span className="badge badge-light">{value}</span>
+            </Button>
+          </NavbarText>
+        </Collapse>
+        </Navbar>
+    </div>
+  );
 }
 
-export default NavbarComp;
+export default NavbarComp
