@@ -1,19 +1,6 @@
 import React from 'react'
 import Produk from '../Class/Produk';
-import anggur from '../Gambar/anggur.jpg'
-import apel from '../Gambar/apple.jpg'
-import avocado from '../Gambar/avocado.jpg'
-import banana from '../Gambar/banana.jpg'
-import bery from '../Gambar/berry.jpg'
-import dragon from '../Gambar/dragon-fruit.jpg'
-import jeruk from '../Gambar/jeruk.jpg'
-import kiwi from '../Gambar/kiwi.jpg'
-import lemon from '../Gambar/lemon.jpg'
-import mangga from '../Gambar/manggo.jpg'
-import pepaya from '../Gambar/papaya.jpg'
-import nanas from '../Gambar/pineapple.jpg'
-import strawbery from '../Gambar/strawberries.jpg'
-import semangka from '../Gambar/watermelon.jpg'
+
 
 import { Container } from 'reactstrap'
 
@@ -23,10 +10,7 @@ const Home = () => {
         <Container className="themed-container" fluid={true}>
             <br />
             <Produk
-                stok="10"
-                nama="Anggur California"
-                harga="35.500"
-                img={anggur}
+                
             />
 
             <Produk

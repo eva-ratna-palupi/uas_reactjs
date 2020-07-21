@@ -1,6 +1,20 @@
 import React from 'react'
 import './CSS/Produk.css'
-import { Button, Card, CardDeck, CardTitle,  CardBody, CardImg, Col, Row } from 'reactstrap'
+import { Button, Card, CardTitle, CardBody, CardImg, Col, Row, Container } from 'reactstrap'
+import anggur from '../Gambar/anggur.jpg'
+import apel from '../Gambar/apple.jpg'
+import avocado from '../Gambar/avocado.jpg'
+import banana from '../Gambar/banana.jpg'
+import bery from '../Gambar/berry.jpg'
+import dragon from '../Gambar/dragon-fruit.jpg'
+import jeruk from '../Gambar/jeruk.jpg'
+import kiwi from '../Gambar/kiwi.jpg'
+import lemon from '../Gambar/lemon.jpg'
+import mangga from '../Gambar/manggo.jpg'
+import pepaya from '../Gambar/papaya.jpg'
+import nanas from '../Gambar/pineapple.jpg'
+import strawbery from '../Gambar/strawberries.jpg'
+import semangka from '../Gambar/watermelon.jpg'
 
 
 class Produk extends React.Component {
@@ -8,7 +22,7 @@ class Produk extends React.Component {
         super(props)
 
         this.state = {
-            stock: this.props.stok,
+            stock: 10,
             sub: "Beli",
             status: "Tersedia",
             disabled: false
@@ -31,50 +45,47 @@ class Produk extends React.Component {
     render() {
         return (
             <div>
-                <Row xs="3">
-                <Col>
-                    <Card>
-                        
-                        <CardImg top width="100%" src={this.props.img}/>
-                        <CardBody>
-                        <CardTitle>{this.props.nama}</CardTitle>
-                        <p><b>Rp. {this.props.harga} /kg</b></p>
-                        <p>Stok : {this.state.stock}</p>
-                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
-                        </CardBody>
-                        
-                    </Card><br/><br/>
-            
-            </Col>
-            <Col>
-                    <Card>
-                        
-                        <CardImg top width="100%" src={this.props.img}/>
-                        <CardBody>
-                        <CardTitle>{this.props.nama}</CardTitle>
-                        <p><b>Rp. {this.props.harga} /kg</b></p>
-                        <p>Stok : {this.state.stock}</p>
-                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
-                        </CardBody>
-                        
-                    </Card><br/><br/>
-            
-            </Col>
-            <Col>
-                    <Card>
-                        
-                        <CardImg top width="100%" src={this.props.img}/>
-                        <CardBody>
-                        <CardTitle>{this.props.nama}</CardTitle>
-                        <p><b>Rp. {this.props.harga} /kg</b></p>
-                        <p>Stok : {this.state.stock}</p>
-                        <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
-                        </CardBody>
-                        
-                    </Card><br/><br/>
-            
-            </Col>
-            </Row>
+                <Container className="themed-container" fluid={true}>
+                    <br />
+                    <Row xs="3">
+                        <Col>
+                            <Card>
+                                <CardImg top width="100%" src={anggur} />
+                                <CardBody>
+                                    <CardTitle>Anggur California</CardTitle>
+                                    <p><b>Rp. 35.500 /kg</b></p>
+                                    <p>{this.state.stock}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                </CardBody>
+                            </Card><br /><br />
+                        </Col>
+
+                        <Col>
+                            <Card>
+                                <CardImg top width="100%" src={apel} />
+                                <CardBody>
+                                    <CardTitle>Apel Hijau</CardTitle>
+                                    <p><b>Rp. 20.000 /kg</b></p>
+                                    <p>Stok : {this.state.stock}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                </CardBody>
+                            </Card><br /><br />
+                        </Col>
+
+                        <Col>
+                            <Card>
+                                <CardImg top width="100%" src={avocado} />
+                                <CardBody>
+                                    <CardTitle>Alpukat</CardTitle>
+                                    <p><b>Rp. 28.000 /kg</b></p>
+                                    <p>Stok : {this.state.stock}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                </CardBody>
+                            </Card><br /><br />
+
+                        </Col>
+                    </Row>
+                </Container>
             </div>
 
         )
