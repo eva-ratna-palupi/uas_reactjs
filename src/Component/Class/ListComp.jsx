@@ -68,12 +68,14 @@ class ListComp extends PureComponent {
                             <th>Nama</th>
                             <th>Jumlah</th>
                             <th>Harga</th>
+                            <th>Aksi</th>
                         </tr>
 
                     </thead>
                     <tbody>
                         {this.state.tb_produk.map(tb_produk =>
                             <tr key={tb_produk.id_produk}>
+                                <td>{tb_produk.id_produk}</td>
                                 <td>{tb_produk.nama}</td>
                                 <td>{tb_produk.jumlah}</td>
                                 <td>{tb_produk.harga}</td>

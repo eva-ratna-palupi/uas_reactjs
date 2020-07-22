@@ -7,8 +7,8 @@ const AboutComp = () => {
         <div>
             <Jumbotron fluid>
                         <Container fluid>
-                            <h1 className="display-3">About!</h1>
-                            <p className="lead">Aplikasi Bengkel Online</p>
+                            <h1 className="display-3">BECERIN</h1>
+                            <p className="lead">Adalah aplikasi penjualan inventory Buah Online</p>
                             <p className="text-info">Created by: Eva Ratna Palupi</p>
                         </Container>
             </Jumbotron>
