@@ -15,14 +15,16 @@ import pepaya from '../Gambar/papaya.jpg'
 import nanas from '../Gambar/pineapple.jpg'
 import strawbery from '../Gambar/strawberries.jpg'
 import semangka from '../Gambar/watermelon.jpg'
+import Home from '../Fungsional/Home'
 
 
 class Produk extends React.Component {
+    
     constructor(props) {
         super(props)
 
         this.state = {
-            stock: 10,
+            stock: [10,20,30],
             sub: "Beli",
             status: "Tersedia",
             disabled: false
@@ -31,10 +33,10 @@ class Produk extends React.Component {
     }
     ButtonBeli = () => {
         this.setState({
-            stock: this.state.stock - 1
+            stock: this.state.stock ['reduce'-1]
         })
 
-        if (this.state.stock === 1) {
+        if(this.state.stock ===1){
             this.setState({
                 status: "Habis",
                 disabled: true
@@ -54,8 +56,8 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Anggur California</CardTitle>
                                     <p><b>Rp. 35.500 /kg</b></p>
-                                    <p>{this.state.stock}</p>
-                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
                         </Col>
@@ -66,8 +68,8 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Apel Hijau</CardTitle>
                                     <p><b>Rp. 20.000 /kg</b></p>
-                                    <p>Stok : {this.state.stock}</p>
-                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                    <p>Stok : {this.state.stock[1]}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[1]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
                         </Col>
@@ -78,11 +80,10 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Alpukat</CardTitle>
                                     <p><b>Rp. 28.000 /kg</b></p>
-                                    <p>Stok : {this.state.stock}</p>
-                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
+                                    <p>Stok : {this.state.stock[2]}</p>
+                                    <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[2]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
-
                         </Col>
                     </Row>
                 </Container>

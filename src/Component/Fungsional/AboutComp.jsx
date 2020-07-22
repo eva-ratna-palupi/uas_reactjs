@@ -12,18 +12,6 @@ const AboutComp = () => {
                             <p className="text-info">Created by: Eva Ratna Palupi</p>
                         </Container>
             </Jumbotron>
-            <Container>
-                <Row>
-                    <Col><CardComp id="1" judul="Belajar web" tanggal = "11 Juni 2020"/></Col>
-                
-               
-                    <Col><CardComp id="2" judul="Belajar Tutorial" tanggal = "12 Juni 2020"/></Col>
-                
-               
-                    <Col><CardComp id="3" judul="Belajar Apa aja" tanggal = "13 Juni 2020"/></Col>
-                
-                </Row>
-            </Container>
         
         </div>
     );
