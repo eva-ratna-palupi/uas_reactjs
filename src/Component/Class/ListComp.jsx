@@ -58,7 +58,7 @@ class ListComp extends PureComponent {
         return (
             <Container>
                 <h2>Data Produk</h2>
-                <NavLink href="/produk/tambah"><Button color="primary">Tambah Data</Button></NavLink>
+                <NavLink href="/barang/tambah"><Button color="primary">Tambah Data</Button></NavLink>
                 <Alert color="primary" style={{display: this.state.display}}>{this.state.response}</Alert>
                 <hr />
                 <Table className="table=bordered">
@@ -66,7 +66,7 @@ class ListComp extends PureComponent {
                         <tr>
                             <th>ID</th>
                             <th>Nama</th>
-                            <th>Jumlah</th>
+                            <th>Stok</th>
                             <th>Harga</th>
                             <th>Aksi</th>
                         </tr>
@@ -83,7 +83,7 @@ class ListComp extends PureComponent {
                                     <Link to=
                                         {
                                             {
-                                                pathname: '/produk/edit',
+                                                pathname: '/barang/edit',
                                                 state: {
                                                     id_produk: tb_produk.id_produk,
                                                     nama: tb_produk.nama,

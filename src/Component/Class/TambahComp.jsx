@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Container, Col, Row, FormGroup, Alert, Label, Input, Button, Form } from 'reactstrap';
-import { Link } from 'react-router-dom';
+
 const api = 'http://localhost:3001'
 
 class TambahComp extends Component {
@@ -9,10 +9,10 @@ class TambahComp extends Component {
         super(props)
 
         this.state = {
-            nim: '',
+            id_produk: '',
             nama: '',
-            jurusan: '',
-            response: '',
+            jumlah: '',
+            harga: '',
             display: 'none'
         }
     }
@@ -21,11 +21,12 @@ class TambahComp extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    AddMahasiswa = () => {
-        axios.post(api + '/tambah', {
-            nim: this.state.nim,
+    AddProduk = () => {
+        axios.post(api + '/api/v1/tambah-produk', {
+            id_produk: this.state.id_produk,
             nama: this.state.nama,
-            jurusan: this.state.jurusan
+            jumlah: this.state.jumlah,
+            harga: this.state.harga
         }).then(json => {
             if (json.data.status === 200) {
                 console.log(json.data.value)
@@ -46,17 +47,17 @@ class TambahComp extends Component {
     render() {
         return (
             <Container>
-                <h4>Form Tambah Data</h4>
-                <Alert color="primary" style={{ display: this.state.display }}>
+                <h4>Form Tambah Data Barang </h4>
+                <Alert color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>NIM</Label>
+                        <Label>ID</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="nim" value={this.state.nim} onChange={this.handleChange} placeholder="Masukan NIM" />
+                                    <Input type="text" name="id_produk" value={this.state.id_produk} onChange={this.handleChange} placeholder="Masukan ID" />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -69,18 +70,26 @@ class TambahComp extends Component {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>Jurusan</Label>
+                        <Label>Stok</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="jurusan" value={this.state.jurusan} onChange={this.handleChange} placeholder="Masukan Jurusan" />
+                                    <Input type="text" name="jumlah" value={this.state.jumlah} onChange={this.handleChange} placeholder="Masukan Stok" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Harga</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="harga" value={this.state.harga} onChange={this.handleChange} placeholder="Masukan Harga" />
                                 </Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={this.AddMahasiswa}>Submit</Button>
+                                    <Button type="button" color="warning" onClick={this.AddProduk}>Submit</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
