@@ -1,5 +1,5 @@
 import React, { useReducer, createContext } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavbarComp from '../src/Component/Fungsional/NavbarComp';
 //import Home from '../src/Component/Fungsional/Home'
 import Homepage from '../src/Component/Fungsional/Homepage'
@@ -7,27 +7,30 @@ import ListComp from './Component/Class/ListComp';
 import AboutComp from '../src/Component/Fungsional/AboutComp';
 import Produk from '../src/Component/Class/Produk';
 import TambahComp from './Component/Class/TambahComp';
-import Login from '../src/Component/Fungsional/Login';
+import Login from './Component/Fungsional/Login';
 import Register from './Component/Fungsional/Register';
+import Menu from './Component/Fungsional/Menu';
 
-
+//Context
 export const AuthContext = createContext()
 
+//initial state
 const initialState = {
   isAuthenticated: false,
-  user: null,
+  nama_user: null,
   token: null
 }
 
+//fungsi reducer
 const reducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
-      localStorage.setItem("user", JSON.stringify(action.payload.user))
+      localStorage.setItem("nama_user", JSON.stringify(action.payload.nama_user))
       localStorage.setItem("token", JSON.stringify(action.payload.token))
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user,
+        nama_user: action.payload.nama_user,
         token: action.payload.token
       }
     case "LOGOUT":
@@ -35,7 +38,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        user: action.payload.user
+        nama_user: action.payload.nama_user
       }
       default:
         return state;
@@ -43,36 +46,40 @@ const reducer = (state, action) => {
   }
 }
 
-const App = () => {
+function App () {
   const [state, dispatch] = useReducer(reducer, initialState)
+  
   return (
     <BrowserRouter>
-      <NavbarComp />
+      
       <Switch>
         <AuthContext.Provider value={{
           state,
           dispatch
         }}>
-          <Homepage/>
           {!state.isAuthenticated ?
             <Redirect
               to={{
-                pathname: "/login"
-              }} />:
+                pathname: "/"
+              }} 
+            /> :
             <Redirect
               to={{
                 pathname: "/home"
               }} />
       }
-        </AuthContext.Provider>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/" component={Homepage} />
+
+        <NavbarComp />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/home" component={Homepage} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/about" component={AboutComp} />
         <Route exact path="/produk" component={Produk} />
         <Route exact path="/barang" component={ListComp} />
         <Route exact path="/barang/tambah" component={TambahComp} />
 
+        </AuthContext.Provider>
+        
       </Switch>
     </BrowserRouter>
   );
