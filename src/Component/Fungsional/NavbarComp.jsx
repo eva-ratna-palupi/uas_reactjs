@@ -10,7 +10,7 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
-import { CartContext } from '../../CartContext';
+import { AuthContext } from '../../App';
 
 const NavbarComp = (props) => {
 
@@ -18,9 +18,11 @@ const NavbarComp = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const {state, dispatch} = useContext(AuthContext)
+
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar color="light bg-success" light expand="md">
         <NavbarBrand href="/">BECERIN</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -37,9 +39,17 @@ const NavbarComp = (props) => {
             <NavItem>
               <NavLink href="/barang">Barang</NavLink>
             </NavItem>
-          
           </Nav>
           <NavbarText>
+            <Button color="primary"
+            onClick={() => 
+            dispatch({
+              type: "LOGOUT"
+            })}>
+              {state.isAuthenticated && (
+                <NavLink>LOG OUT</NavLink>
+              )}
+            </Button>
           </NavbarText>
         </Collapse>
         </Navbar>
