@@ -39,18 +39,17 @@ const reducer = (state, action) => {
         isAuthenticated: false,
         nama_user: null
       }
-      default:
-        return state;
-
+    default:
+      return state;
   }
 }
 
-function App () {
+function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  
+
   return (
     <BrowserRouter>
-      
+
       <Switch>
         <AuthContext.Provider value={{
           state,
@@ -60,23 +59,22 @@ function App () {
             <Redirect
               to={{
                 pathname: "/"
-              }} 
+              }}
             /> :
             <Redirect
               to={{
-                pathname: "/home"
-              }} />
-      }
-
+              pathname: "/home", 
+            }} />
+            }
         <NavbarComp />
-        <Route exact path="/" component={Login} />
-        <Route exact path="/home" component={Homepage} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/about" component={AboutComp} />
-        <Route exact path="/produk" component={Produk} />
-        <Route exact path="/barang" component={ListComp} />
-        <Route exact path="/barang/tambah" component={TambahComp} />
-        <Route exact path="/barang/edit" component={EditComp}/>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/home" component={Homepage} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/about" component={AboutComp} />
+          <Route exact path="/produk" component={Produk} />
+          <Route exact path="/barang" component={ListComp} />
+          <Route exact path="/barang/tambah" component={TambahComp} />
+          <Route exact path="/barang/edit" component={EditComp} />
 
         </AuthContext.Provider>
       </Switch>

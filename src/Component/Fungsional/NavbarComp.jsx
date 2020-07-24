@@ -12,7 +12,7 @@ import {
 } from 'reactstrap';
 import { AuthContext } from '../../App';
 
-const NavbarComp = (props) => {
+function NavbarComp() {
 
   const [isOpen, setIsOpen] = useState(false);
 

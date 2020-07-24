@@ -28,8 +28,7 @@ class EditComp extends Component {
             id_produk: id_produk,
             nama: this.state.nama,
             jumlah: this.state.jumlah,
-            harga: this.state.harga,
-
+            harga: this.state.harga
         });
         axios.put(api + '/api/v1/ubah-produk', data)
             .then(json => {

@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState } from 'react';
 import { Container, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import axios from 'axios'
 import { AuthContext } from '../../App';
-
+import {Link} from 'react-router-dom'
 
 const qs = require('querystring')
 const api = 'http://localhost:3001'
@@ -98,7 +98,7 @@ const Register = () => {
                                     {data.errorMessage}
                                 </div>
                             )}
-                            <Button color="success" block disabled={data.isSubmitting}>Submit</Button>
+                            <Button color="success" block disabled={data.isSubmitting}><Link to ="/">Submit</Link></Button>
                         </Col>
                     </Form>
                 </Container>
