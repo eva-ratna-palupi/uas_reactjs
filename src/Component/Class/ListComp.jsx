@@ -28,10 +28,9 @@ class ListComp extends PureComponent {
         const { tb_produk } = this.state
         const data = qs.stringify({
             id_produk: id_produk
-
         })
 
-        axios.delete(api + '/hapus',
+        axios.delete(api + '/api/v1/hapus-produk',
             {
                 data: data,
                 headers: { 'Content-type': 'application/x-www-form-urlencoded' }
@@ -43,7 +42,7 @@ class ListComp extends PureComponent {
                     tb_produk: tb_produk.filter(tb_produk => tb_produk.id_produk !== id_produk),
                     display: 'block'
                 })
-                this.props.history.push('/produk')
+                this.props.history.push('/barang')
             } else {
                 this.setState({
                     response: json.data.values,
@@ -58,7 +57,7 @@ class ListComp extends PureComponent {
         return (
             <Container>
                 <h2>Data Produk</h2>
-                <NavLink href="/barang/tambah"><Button color="primary">Tambah Data</Button></NavLink>
+                <NavLink href="/barang/tambah"><Button color="primary">Tambah Data Barang</Button></NavLink>
                 <Alert color="primary" style={{display: this.state.display}}>{this.state.response}</Alert>
                 <hr />
                 <Table className="table=bordered">

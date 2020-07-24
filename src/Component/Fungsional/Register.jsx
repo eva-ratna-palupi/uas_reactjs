@@ -11,6 +11,7 @@ const Register = () => {
     const { dispatch } = useContext(AuthContext)
 
     const initialState = {
+        nama_user: "",
         email: "",
         password: "",
         level: "",
@@ -71,8 +72,12 @@ const Register = () => {
         <div>
             <Fragment>
                 <Container><br /><br />
-                    <Form>
+                    <Form onSubmit={handleFormSubmit}>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
+                            <FormGroup>
+                                <Label for="Email">Nama</Label>
+                                <Input type="email" name="nama" id="nama" value={data.nama_user} onChange={handleInputChange} placeholder="Masukan Nama" />
+                            </FormGroup>
                             <FormGroup>
                                 <Label for="Email">Email</Label>
                                 <Input type="email" name="email" id="eEmail" value={data.email} onChange={handleInputChange} placeholder="Masukan Email" />
@@ -83,9 +88,9 @@ const Register = () => {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Select">Level</Label>
-                                <Input type="select" name="select" id="Select" value={data.level} onChange={handleInputChange}>
-                                    <option>Member</option>
-                                    <option>Admin</option>
+                                <Input type="select" name="select" id="Select" onChange={handleInputChange}>
+                                    <option value={data.level}>Member</option>
+                                    <option value={data.level}>Admin</option>
                                 </Input>
                             </FormGroup>
                             {data.errorMessage && (

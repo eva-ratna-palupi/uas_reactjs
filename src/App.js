@@ -8,6 +8,7 @@ import Produk from '../src/Component/Class/Produk';
 import TambahComp from './Component/Class/TambahComp';
 import Login from './Component/Fungsional/Login';
 import Register from './Component/Fungsional/Register';
+import EditComp from './Component/Class/EditComp';
 
 //Context
 export const AuthContext = createContext()
@@ -75,6 +76,7 @@ function App () {
         <Route exact path="/produk" component={Produk} />
         <Route exact path="/barang" component={ListComp} />
         <Route exact path="/barang/tambah" component={TambahComp} />
+        <Route exact path="/barang/edit" component={EditComp}/>
 
         </AuthContext.Provider>
       </Switch>

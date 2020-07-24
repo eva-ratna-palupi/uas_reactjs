@@ -13,6 +13,7 @@ class TambahComp extends Component {
             nama: '',
             jumlah: '',
             harga: '',
+            response: '',
             display: 'none'
         }
     }
