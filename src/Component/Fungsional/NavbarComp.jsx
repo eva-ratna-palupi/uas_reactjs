@@ -22,7 +22,7 @@ const NavbarComp = (props) => {
 
   return (
     <div>
-      <Navbar color="light bg-success" light expand="md">
+      <Navbar color="success" light expand="md">
         <NavbarBrand href="/">BECERIN</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -41,7 +41,7 @@ const NavbarComp = (props) => {
             </NavItem>
           </Nav>
           <NavbarText>
-            <Button color="primary"
+            <Button color="success"
             onClick={() => 
             dispatch({
               type: "LOGOUT"

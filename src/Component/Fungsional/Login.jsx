@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import logo from '../Gambar/be.png'
 import { AuthContext } from '../../App';
+import { Link } from 'react-router-dom'
+import './CSS/Login.css'
 
 const qs = require('querystring')
 const api = 'http://localhost:3001'
@@ -70,34 +72,36 @@ function Login() {
             <Fragment>
                 <Container>
                     <br />
-                    <Col  sm="12" md={{ size: 6, offset: 3 }}><img src={logo} alt="" className="logo"/></Col>
-                            <Form onSubmit={handleFormSubmit}>
-                                    <Col sm="12" md={{ size: 6, offset: 3 }}>
-                                        <FormGroup>
-                                            <Label for="exampleEmail">Email</Label>
-                                            <Input type="email" value={data.email} onChange={handleInputChange} name="email" id="exampleEmail" placeholder="Masukan Email" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col  sm="12" md={{ size: 6, offset: 3 }}>
-                                        <FormGroup>
-                                            <Label for="examplePassword">Password</Label>
-                                            <Input type="password" value={data.password} onChange={handleInputChange} name="password" id="examplePassword" placeholder="Masukan Password" />
-                                        </FormGroup>
-                                        {data.errorMessage && (
-                                            <div className="alert alert-danger" role="alert">
-                                                {data.errorMessage}
-                                            </div>
-                                        )}
-                                    </Col><br/>
-                                <Col  sm="12" md={{ size: 6, offset: 3 }}>
-                                <Button color="success" block disabled={data.isSubmitting}>
-                                    {data.isSubmitting ? (
-                                        "...Loading"
-                                    ) :
-                                        (
-                                            "Login"
-                                        )}</Button></Col>
-                            </Form>
+                    <Col sm="12" md={{ size: 6, offset: 3 }}><img src={logo} alt="" className="logo" /></Col>
+                    <Form onSubmit={handleFormSubmit}>
+                        <Col sm="12" md={{ size: 6, offset: 3 }}>
+                            <FormGroup>
+                                <Label for="exampleEmail">Email</Label>
+                                <Input type="email" value={data.email} onChange={handleInputChange} name="email" id="exampleEmail" placeholder="Masukan Email" />
+                            </FormGroup>
+                        </Col>
+                        <Col sm="12" md={{ size: 6, offset: 3 }}>
+                            <FormGroup>
+                                <Label for="examplePassword">Password</Label>
+                                <Input type="password" value={data.password} onChange={handleInputChange} name="password" id="examplePassword" placeholder="Masukan Password" />
+                            </FormGroup>
+                            {data.errorMessage && (
+                                <div className="alert alert-danger" role="alert">
+                                    {data.errorMessage}
+                                </div>
+                            )}
+                        </Col><br />
+                        <Col sm="12" md={{ size: 6, offset: 3 }}>
+                            <Button color="success" block disabled={data.isSubmitting}>
+                                {data.isSubmitting ? (
+                                    "...Loading"
+                                ) :
+                                    (
+                                        "Login"
+                                    )}</Button></Col>
+                    </Form> <br></br>  
+                    <Col sm="12" md={{ size: 6, offset: 3 }}>
+                            <p className="p">Belum punya Akun? <Link to="/register">Registrasi</Link></p></Col>
                 </Container>
             </Fragment>
         </div>

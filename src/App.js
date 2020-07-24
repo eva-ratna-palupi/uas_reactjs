@@ -1,7 +1,6 @@
 import React, { useReducer, createContext } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavbarComp from '../src/Component/Fungsional/NavbarComp';
-//import Home from '../src/Component/Fungsional/Home'
 import Homepage from '../src/Component/Fungsional/Homepage'
 import ListComp from './Component/Class/ListComp';
 import AboutComp from '../src/Component/Fungsional/AboutComp';
@@ -9,7 +8,6 @@ import Produk from '../src/Component/Class/Produk';
 import TambahComp from './Component/Class/TambahComp';
 import Login from './Component/Fungsional/Login';
 import Register from './Component/Fungsional/Register';
-import Menu from './Component/Fungsional/Menu';
 
 //Context
 export const AuthContext = createContext()
@@ -79,7 +77,6 @@ function App () {
         <Route exact path="/barang/tambah" component={TambahComp} />
 
         </AuthContext.Provider>
-        
       </Switch>
     </BrowserRouter>
   );
