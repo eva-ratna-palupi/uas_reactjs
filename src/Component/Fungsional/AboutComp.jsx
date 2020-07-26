@@ -1,8 +1,10 @@
 import React from 'react';
 import {Jumbotron, Container, Row, Col} from 'reactstrap';
-import CardComp from './CardComp';
+import { useContext } from 'react';
+import { AuthContext } from '../../App';
 
 const AboutComp = () => {
+
     return (
         <div>
             <Jumbotron fluid>

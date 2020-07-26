@@ -18,7 +18,6 @@ function NavbarComp() {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const {state, dispatch} = useContext(AuthContext)
 
   return (
     <div>
@@ -41,14 +40,8 @@ function NavbarComp() {
             </NavItem>
           </Nav>
           <NavbarText>
-            <Button color="success"
-            onClick={() => 
-            dispatch({
-              type: "LOGOUT"
-            })}>
-              {state.isAuthenticated && (
-                <NavLink>LOG OUT</NavLink>
-              )}
+            <Button color="success">
+              LOG OUT
             </Button>
           </NavbarText>
         </Collapse>

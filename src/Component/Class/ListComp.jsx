@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import qs from 'querystring'
-import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
+import { Table, Button, Container, NavLink, Alert, Col } from 'reactstrap'
 import {Link} from 'react-router-dom'
 
 const api = 'http://localhost:3001'
@@ -30,7 +30,7 @@ class ListComp extends PureComponent {
             id_produk: id_produk
         })
 
-        axios.delete(api + '/api/v1/hapus-produk',
+        axios.delete(api + '/hapus',
             {
                 data: data,
                 headers: { 'Content-type': 'application/x-www-form-urlencoded' }
@@ -56,10 +56,13 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2>Data Produk</h2>
-                <NavLink href="/barang/tambah"><Button color="primary">Tambah Data Barang</Button></NavLink>
+                <br/>
+                <h2 className="data">Data Barang</h2>
+                
+                <NavLink href="/barang/tambah"><Button color="success">Tambah Data Barang</Button></NavLink>
+                
                 <Alert color="primary" style={{display: this.state.display}}>{this.state.response}</Alert>
-                <hr />
+                
                 <Table className="table=bordered">
                     <thead>
                         <tr>
@@ -91,7 +94,7 @@ class ListComp extends PureComponent {
                                                 }
                                             }
                                         }>
-                                        <Button> Edit </Button>
+                                        <Button color ="success"> Edit </Button>
                                         </Link>
                                         <span> </span>
                                         <Button onClick={() => this.DeleteProduk(tb_produk.id_produk)} color="danger"> Hapus </Button>

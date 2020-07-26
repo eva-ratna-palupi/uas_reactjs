@@ -23,7 +23,7 @@ class TambahComp extends Component {
     }
 
     AddProduk = () => {
-        axios.post(api + '/api/v1/tambah-produk', {
+        axios.post(api + '/tambah', {
             id_produk: this.state.id_produk,
             nama: this.state.nama,
             jumlah: this.state.jumlah,

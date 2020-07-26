@@ -30,7 +30,7 @@ class EditComp extends Component {
             jumlah: this.state.jumlah,
             harga: this.state.harga
         });
-        axios.put(api + '/api/v1/ubah-produk', data)
+        axios.put(api + '/edit', data)
             .then(json => {
                 if (json === 200) {
                     this.setState({
@@ -48,7 +48,7 @@ class EditComp extends Component {
 
     render() {
         return (
-            <Container>
+            <Container><br/>
                 <h4>Form Ubah Data</h4>
                 <Alert color="primary" style={{ display: this.state.display }}>
                     {this.state.response}
