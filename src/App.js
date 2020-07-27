@@ -9,6 +9,7 @@ import TambahComp from './Component/Class/TambahComp';
 import Login from './Component/Fungsional/Login';
 import Register from './Component/Fungsional/Register';
 import EditComp from './Component/Class/EditComp';
+import Footer from './Component/Fungsional/Footer';
 
 //Context
 export const AuthContext = createContext()
@@ -81,7 +82,8 @@ const Utama = withRouter (({location}) => {
       {
         location.pathname !== '/' &&
         location.pathname !== '/register' &&
-        <NavbarComp/>
+        <NavbarComp/> &&
+        <Footer/>
       }
       
           <Route exact path="/" component={Login} />
@@ -92,7 +94,9 @@ const Utama = withRouter (({location}) => {
           <Route exact path="/barang" component={ListComp} />
           <Route exact path="/barang/tambah" component={TambahComp} />
           <Route exact path="/barang/edit" component={EditComp} />
-
+        
+          
+        
     </div>
   )
 })
