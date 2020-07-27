@@ -16,7 +16,8 @@ function Login() {
         email: "",
         password: "",
         isSubmitting: false,
-        errorMessage: null
+        errorMessage: null,
+        display: 'none'
     }
 
     const [data, setData] = useState(initialState)
@@ -33,7 +34,8 @@ function Login() {
         setData({
             ...data,
             isSubmitting: true,
-            errorMessage: null
+            errorMessage: null,
+            display: 'block'
         })
     }
 
@@ -60,7 +62,8 @@ function Login() {
                 setData({
                     ...data,
                     isSubmitting: false,
-                    errorMessage: res.data.Message
+                    errorMessage: res.data.Message,
+                    display: 'block'
                 })
             }
             throw res
@@ -86,7 +89,7 @@ function Login() {
                                 <Input type="password" value={data.password} onChange={handleInputChange} name="password" id="examplePassword" placeholder="Masukan Password" />
                             </FormGroup>
                             {data.errorMessage && (
-                                <div className="alert alert-danger" role="alert">
+                                <div className="alert alert-danger" role="alert" >
                                     {data.errorMessage}
                                 </div>
                             )}

@@ -38,6 +38,7 @@ const Register = () => {
     }
 
     const requestBody = {
+        nama_user: data.nama_user,
         email: data.email,
         password: data.password,
         level: data.level
@@ -75,8 +76,8 @@ const Register = () => {
                     <Form onSubmit={handleFormSubmit}>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
                             <FormGroup>
-                                <Label for="Email">Nama</Label>
-                                <Input type="email" name="nama" id="nama" value={data.nama_user} onChange={handleInputChange} placeholder="Masukan Nama" />
+                                <Label for="Nama">Nama</Label>
+                                <Input type="text" name="nama_user" id="nama" value={data.nama_user} onChange={handleInputChange} placeholder="Masukan Nama" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Email">Email</Label>
@@ -88,9 +89,9 @@ const Register = () => {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Select">Level</Label>
-                                <Input type="select" name="select" id="Select" onChange={handleInputChange}>
-                                    <option value={data.level}>Member</option>
-                                    <option value={data.level}>Admin</option>
+                                <Input type="select" name="select" id="Select" >
+                                    <option value={data.level} onChange={handleInputChange}>Member</option>
+                                    <option value={data.level} onChange={handleInputChange}>Admin</option>
                                 </Input>
                             </FormGroup>
                             {data.errorMessage && (
