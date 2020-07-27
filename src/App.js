@@ -81,11 +81,11 @@ const Utama = withRouter (({location}) => {
     <div>
       {
         location.pathname !== '/' &&
-        location.pathname !== '/register' &&
-        <NavbarComp/> &&
-        <Footer/>
+        location.pathname !== '/register'
+        
       }
-      
+          <NavbarComp/>
+        
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Homepage}/>
           <Route exact path="/register" component={Register} />
@@ -94,6 +94,9 @@ const Utama = withRouter (({location}) => {
           <Route exact path="/barang" component={ListComp} />
           <Route exact path="/barang/tambah" component={TambahComp} />
           <Route exact path="/barang/edit" component={EditComp} />
+          <footer>
+          <Footer/>
+          </footer>
     </div>
   )
 })
