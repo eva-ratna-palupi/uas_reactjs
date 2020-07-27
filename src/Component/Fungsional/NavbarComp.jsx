@@ -13,6 +13,7 @@ import {
 import { AuthContext } from '../../App';
 
 function NavbarComp() {
+  const { state, dispatch } = useContext(AuthContext)
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,12 +41,18 @@ function NavbarComp() {
             </NavItem>
           </Nav>
           <NavbarText>
-            <Button color="success">
-              LOG OUT
+            <Button color="success"
+              onClick={() =>
+                dispatch({
+                  type: "LOGOUT"
+                })}>
+              {state.isAuthenticated && (
+                <NavLink>LOG OUT</NavLink>
+              )}
             </Button>
           </NavbarText>
         </Collapse>
-        </Navbar>
+      </Navbar>
     </div>
   );
 }

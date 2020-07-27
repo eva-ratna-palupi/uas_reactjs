@@ -5,6 +5,8 @@ import { AuthContext } from '../../App';
 
 const AboutComp = () => {
 
+    const {state, dispatch} = useContext(AuthContext)
+
     return (
         <div>
             <Jumbotron fluid>

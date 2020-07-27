@@ -71,7 +71,7 @@ class EditComp extends Component {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>Jurusan</Label>
+                        <Label>Harga</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
@@ -82,7 +82,7 @@ class EditComp extends Component {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={() => this.ubahProduk(this.state.id_produk)}>Update</Button>
+                                    <Button type="button" color="success" onClick={() => this.ubahProduk(this.state.id_produk)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
