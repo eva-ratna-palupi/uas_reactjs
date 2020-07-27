@@ -23,7 +23,7 @@ class Produk extends React.Component {
         super(props)
 
         this.state = {
-            stock: [10,20,30],
+            stock: [10,20,30,15,17,18,19,22,23,24,25,15,35,37,23,15],
             sub: "Beli",
             status: "Tersedia",
             disabled: false
@@ -91,7 +91,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Pisang</CardTitle>
                                     <p><b>Rp. 15.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[3]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -103,7 +103,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Berry Ungu</CardTitle>
                                     <p><b>Rp. 25.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[4]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -115,7 +115,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Buah Naga</CardTitle>
                                     <p><b>Rp. 18.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[5]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -127,7 +127,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Jeruk</CardTitle>
                                     <p><b>Rp. 12.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[6]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -139,7 +139,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Kiwi Hijau</CardTitle>
                                     <p><b>Rp. 20.000 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[7]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -151,7 +151,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Lemon</CardTitle>
                                     <p><b>Rp. 20.000 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[8]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -163,7 +163,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Mangga</CardTitle>
                                     <p><b>Rp. 17.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[9]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -175,7 +175,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Pepaya</CardTitle>
                                     <p><b>Rp. 10.000 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[10]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -187,7 +187,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Nanas</CardTitle>
                                     <p><b>Rp. 18.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[11]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -199,7 +199,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Strawberry</CardTitle>
                                     <p><b>Rp. 30.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[12]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />
@@ -211,7 +211,7 @@ class Produk extends React.Component {
                                 <CardBody>
                                     <CardTitle>Semangka</CardTitle>
                                     <p><b>Rp. 8.500 /kg</b></p>
-                                    <p>Stok : {this.state.stock[0]}</p>
+                                    <p>Stok : {this.state.stock[13]}</p>
                                     <p><Button outline color="success" className="btn-click" onClick={this.ButtonBeli[0]} disabled={this.state.disabled}>Beli</Button>        {this.state.status}</p>
                                 </CardBody>
                             </Card><br /><br />

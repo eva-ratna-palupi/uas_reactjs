@@ -94,9 +94,6 @@ const Utama = withRouter (({location}) => {
           <Route exact path="/barang" component={ListComp} />
           <Route exact path="/barang/tambah" component={TambahComp} />
           <Route exact path="/barang/edit" component={EditComp} />
-        
-          
-        
     </div>
   )
 })
